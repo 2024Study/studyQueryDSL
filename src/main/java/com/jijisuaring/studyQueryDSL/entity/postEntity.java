@@ -1,5 +1,7 @@
 package com.jijisuaring.studyQueryDSL.entity;
 
+
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -52,6 +54,11 @@ public class postEntity {
     //좋아요 매핑
 
     //태그 매핑
+
+
+
+
+
 
 
 }
