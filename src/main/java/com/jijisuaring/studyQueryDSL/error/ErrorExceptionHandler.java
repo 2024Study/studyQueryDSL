@@ -1,6 +1,6 @@
 package com.jijisuaring.studyQueryDSL.error;
 
-import com.gamza.ItEat.error.exeption.*;
+import com.jijisuaring.studyQueryDSL.error.exeption.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

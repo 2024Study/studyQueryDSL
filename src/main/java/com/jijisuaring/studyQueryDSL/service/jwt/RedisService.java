@@ -1,8 +1,8 @@
 package com.jijisuaring.studyQueryDSL.service.jwt;
 
-import com.gamza.ItEat.error.ErrorCode;
-import com.gamza.ItEat.error.exeption.InvalidTokenException;
-import com.gamza.ItEat.error.exeption.NotFoundException;
+import com.jijisuaring.studyQueryDSL.error.ErrorCode;
+import com.jijisuaring.studyQueryDSL.error.exeption.InvalidTokenException;
+import com.jijisuaring.studyQueryDSL.error.exeption.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;

@@ -1,11 +1,11 @@
 package com.jijisuaring.studyQueryDSL.jwt;
 
-import com.gamza.ItEat.enums.UserRole;
-import com.gamza.ItEat.error.ErrorCode;
-import com.gamza.ItEat.error.exeption.ForbiddenException;
-import com.gamza.ItEat.repository.UserRepository;
-import com.gamza.ItEat.service.jwt.CustomUserDetailService;
-import com.gamza.ItEat.service.jwt.RedisService;
+import com.jijisuaring.studyQueryDSL.entity.enums.UserRole;
+import com.jijisuaring.studyQueryDSL.error.ErrorCode;
+import com.jijisuaring.studyQueryDSL.error.exeption.ForbiddenException;
+import com.jijisuaring.studyQueryDSL.repository.UserRepository;
+import com.jijisuaring.studyQueryDSL.service.jwt.CustomUserDetailService;
+import com.jijisuaring.studyQueryDSL.service.jwt.RedisService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;

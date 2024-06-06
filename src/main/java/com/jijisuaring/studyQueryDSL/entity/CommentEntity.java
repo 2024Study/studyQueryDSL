@@ -5,14 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.text.DateFormat;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class commentEntity {
+public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

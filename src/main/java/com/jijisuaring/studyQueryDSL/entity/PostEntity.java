@@ -1,7 +1,6 @@
 package com.jijisuaring.studyQueryDSL.entity;
 
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,7 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class postEntity {
+public class PostEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

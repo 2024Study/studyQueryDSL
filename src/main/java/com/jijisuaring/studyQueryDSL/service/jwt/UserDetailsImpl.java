@@ -1,6 +1,6 @@
 package com.jijisuaring.studyQueryDSL.service.jwt;
 
-import com.gamza.ItEat.entity.UserEntity;
+import com.jijisuaring.studyQueryDSL.entity.UserEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,11 +22,6 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public String getPassword() {
         return userEntity.getEmail();
-    }
-
-    @Override
-    public String getUsername() {
-        return userEntity.getNickName();
     }
 
     @Override

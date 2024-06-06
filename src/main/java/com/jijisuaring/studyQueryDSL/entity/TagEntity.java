@@ -5,24 +5,22 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Builder
-public class likeEntity {
+public class TagEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-//    default는 false여야함
-    @Column(nullable = false)
-    private boolean unlike;
+    //게시글이랑 매핑
 
-    //게시글 엔티티 매핑
-    //글쓴이 엔티티 매핑
+    //태그명?.. 태그명들은 다 enum들로?
+    @Column(nullable = false)
+    private String tagName;
 
 }

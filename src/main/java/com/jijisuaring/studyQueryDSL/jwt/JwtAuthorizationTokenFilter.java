@@ -1,7 +1,7 @@
 package com.jijisuaring.studyQueryDSL.jwt;
 
-import com.gamza.ItEat.error.ErrorJwtCode;
-import com.gamza.ItEat.service.jwt.RedisService;
+import com.jijisuaring.studyQueryDSL.error.ErrorJwtCode;
+import com.jijisuaring.studyQueryDSL.service.jwt.RedisService;
 import io.jsonwebtoken.*;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
