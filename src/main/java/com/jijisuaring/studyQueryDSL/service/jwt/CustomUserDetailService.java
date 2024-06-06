@@ -1,7 +1,7 @@
 package com.jijisuaring.studyQueryDSL.service.jwt;
 
 
-import com.gamza.ItEat.repository.UserRepository;
+import com.jijisuaring.studyQueryDSL.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

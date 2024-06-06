@@ -1,6 +1,6 @@
 package com.jijisuaring.studyQueryDSL.error.exeption;
 
-import com.gamza.ItEat.error.ErrorCode;
+import com.jijisuaring.studyQueryDSL.error.ErrorCode;
 
 public class BadRequestException extends BusinessException {
 
