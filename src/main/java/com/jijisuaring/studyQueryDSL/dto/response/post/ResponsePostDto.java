@@ -1,7 +1,6 @@
 package com.jijisuaring.studyQueryDSL.dto.response.post;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.jijisuaring.studyQueryDSL.entity.categoryName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,11 +12,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class responsePostDto {
+public class ResponsePostDto {
     private long id;
     private String title;
     private String content;
-    private categoryName name;
+//    private CategoryName name;
     private int views;
     private int likes;
 

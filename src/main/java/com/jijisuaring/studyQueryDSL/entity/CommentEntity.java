@@ -1,23 +1,19 @@
 package com.jijisuaring.studyQueryDSL.entity;
 
-import com.mysql.cj.protocol.ColumnDefinition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
 
-import java.text.DateFormat;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class commentEntity {
+public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -28,7 +24,7 @@ public class commentEntity {
 
     @ManyToOne
     @JoinColumn(name="post_id")
-    private postEntity postEntity;
+    private PostEntity postEntity;
 
     @Column(nullable = false)
     private String content;
@@ -44,4 +40,17 @@ public class commentEntity {
 
     @Column(nullable = false)
     private LocalDateTime deleteAt;
+
+    public CommentEntity updateComment(String content) {
+        this.content = content;
+        return this;
+    }
+
+    public int increaseLikesNums() {
+        return this.likes += 1;
+    }
+
+    public int decreaseLikesNums() {
+        return this.likes -= 1;
+    }
 }

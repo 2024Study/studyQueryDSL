@@ -12,9 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class paginationDto {
+public class PaginationDto {
     private Long totalPage;
     private Boolean lastPage;
     private Long totalElement;
-    private List<responsePostDto> categoryList = new ArrayList<>();
+    private List<ResponsePostDto> categoryList = new ArrayList<>();
 }

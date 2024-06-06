@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class requestUpdatePostDto {
+public class RequestUpdatePostDto {
     private String title;
     private String content;
 }

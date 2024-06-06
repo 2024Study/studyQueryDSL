@@ -5,15 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Builder
-public class likeEntity {
+public class LikeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,17 +23,15 @@ public class likeEntity {
 
     @ManyToOne
     @JoinColumn(name="post_id")
-    private postEntity postEntity;
+    private PostEntity postEntity;
 
     @ManyToOne
     @JoinColumn(name="comment_id")
-    private commentEntity commentEntity;
+    private CommentEntity commentEntity;
 
 //    default는 false여야함
     @Column(nullable = false, columnDefinition = "TINYINT(1) DEAFAULT '0'")
     private boolean unlike;
 
-    //게시글 엔티티 매핑
-    //글쓴이 엔티티 매핑
 
 }
