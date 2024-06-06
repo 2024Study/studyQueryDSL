@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Getter
 @AllArgsConstructor
@@ -18,6 +20,15 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<PostEntity> posts;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<CommentEntity> comments;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<LikeEntity> likes;
 
     @Column(nullable = false)
     private String email;
@@ -39,15 +50,6 @@ public class UserEntity {
 
     @Enumerated(EnumType.STRING)
     private UserRank userRank;
-
-//    @OneToMany(mappedBy = "userEntity")
-//    private List<PostEntity> posts;
-
-//    @OneToMany(mappedBy = "userEntity")
-//    private List<CommentEntity> comments;
-
-//    @OneToMany(mappedBy = "userEntity")
-//    private List<LikeEntity> likes;
 
 
 

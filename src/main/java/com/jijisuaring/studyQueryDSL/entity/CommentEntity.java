@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Getter
@@ -19,13 +18,18 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-//    @ManyToOne
-//    @JoinColumn(name="user_id")
-//    private UserEntity userEntity;
+    @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "fk_comment_user"))
+    private UserEntity userEntity;
 
     @ManyToOne
-    @JoinColumn(name="post_id")
+    @JoinColumn(name = "post_id", foreignKey = @ForeignKey(name = "fk_comment_post"))
     private PostEntity postEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "like_id", foreignKey = @ForeignKey(name = "fk_comment_like"))
+    private LikeEntity likeEntity;
+
 
     @Column(nullable = false)
     private String content;
@@ -41,19 +45,5 @@ public class CommentEntity {
 
     @Column(nullable = false)
     private LocalDateTime deleteAt;
-
-
-    public CommentEntity updateComment(String content) {
-        this.content = content;
-        return this;
-    }
-
-    public int increaseLikesNums() {
-        return this.likes += 1;
-    }
-
-    public int decreaseLikesNums() {
-        return this.likes-= 1;
-    }
 
 }

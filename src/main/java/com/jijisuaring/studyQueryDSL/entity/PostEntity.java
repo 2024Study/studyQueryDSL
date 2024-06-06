@@ -19,16 +19,19 @@ public class PostEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    //사용자 엔티티 매핑
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private UserEntity userEntity;
 
-//    @ManyToOne
-//    @JoinColumn(name="user_id")
-//    private UserEntity userEntity;
-
-//    @OneToMany(mappedBy = "postEntity")
-//    private List<CommentEntity> comments;
-
+    //댓글엔티티 매핑
     @OneToMany(mappedBy = "postEntity")
     private List<CommentEntity> comments;
+
+
+    //좋아요엔티티 매핑
+    @OneToMany(mappedBy = "postEntity")
+    private List<LikeEntity> like;
 
     @Column(columnDefinition = "integer default 0", nullable = false)
     private int likes;
