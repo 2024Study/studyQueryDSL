@@ -1,21 +1,23 @@
 package com.jijisuaring.studyQueryDSL.entity;
 
+import com.jijisuaring.studyQueryDSL.enums.UserRank;
+import com.jijisuaring.studyQueryDSL.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.util.Lazy;
-import org.springframework.web.bind.annotation.Mapping;
 
 @Entity
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class userEntity{
+@Builder
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false)
     private String email;
@@ -27,17 +29,29 @@ public class userEntity{
     private String password;
 
     @Column(nullable = false)
-    private String userRole;
-
-    @Column(nullable = false)
     private boolean deleted;
 
     @Column(nullable = false)
     private int createAt;
 
-//    @Enumerated(모르겟다일단두자)
-//    private enum userRole;
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole;
 
-//    @OneToMany(CascadeType = Lazy)
-//    @Mapping()
+    @Enumerated(EnumType.STRING)
+    private UserRank userRank;
+
+//    @OneToMany(mappedBy = "userEntity")
+//    private List<PostEntity> posts;
+
+//    @OneToMany(mappedBy = "userEntity")
+//    private List<CommentEntity> comments;
+
+//    @OneToMany(mappedBy = "userEntity")
+//    private List<LikeEntity> likes;
+
+
+
+
 }
+
+

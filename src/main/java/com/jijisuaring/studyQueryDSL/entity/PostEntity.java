@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 @Entity
 @Builder
 @Getter
@@ -21,9 +20,12 @@ public class PostEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="user_id")
-    private userEntity userEntity;
+//    @ManyToOne
+//    @JoinColumn(name="user_id")
+//    private UserEntity userEntity;
+
+//    @OneToMany(mappedBy = "postEntity")
+//    private List<CommentEntity> comments;
 
     @OneToMany(mappedBy = "postEntity")
     private List<CommentEntity> comments;
@@ -72,5 +74,9 @@ public class PostEntity {
     public int increaseViews() {
         return this.views += 1;
     }
+
+
+
+
 
 }

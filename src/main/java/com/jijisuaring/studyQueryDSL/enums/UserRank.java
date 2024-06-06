@@ -1,5 +1,5 @@
 package com.jijisuaring.studyQueryDSL.enums;
 
-public enum userRole {
-    admin, user
+public enum UserRank {
+    Gold, Silver, Bronze
 }
