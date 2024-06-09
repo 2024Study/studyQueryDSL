@@ -14,14 +14,14 @@ public class RequestUserSignUpDto {
 
     public UserEntity toEntity() {
         return UserEntity.builder()
-                .id(toEntity().getId())
+//                .id(toEntity().getId())
                 .email(userEmail)
                 .password(userPw)
                 .name(userName)
                 .deleted(false)
                 .build();
-
     }
 
-
 }
+
+
