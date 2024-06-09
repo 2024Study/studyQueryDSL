@@ -1,6 +1,7 @@
 package com.jijisuaring.studyQueryDSL.dto.request;
 
 import com.jijisuaring.studyQueryDSL.entity.UserEntity;
+import com.jijisuaring.studyQueryDSL.enums.UserRole;
 import lombok.Builder;
 import lombok.Data;
 
@@ -18,6 +19,7 @@ public class RequestUserSignUpDto {
                 .email(userEmail)
                 .password(userPw)
                 .name(userName)
+                .userRole(UserRole.user)
                 .deleted(false)
                 .build();
     }

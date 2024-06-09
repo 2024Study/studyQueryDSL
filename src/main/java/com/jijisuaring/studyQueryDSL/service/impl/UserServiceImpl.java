@@ -3,7 +3,7 @@ package com.jijisuaring.studyQueryDSL.service.impl;
 import com.jijisuaring.studyQueryDSL.dto.request.RequestUserLoginDto;
 import com.jijisuaring.studyQueryDSL.dto.request.RequestUserSignUpDto;
 import com.jijisuaring.studyQueryDSL.entity.UserEntity;
-import com.jijisuaring.studyQueryDSL.entity.enums.UserRole;
+import com.jijisuaring.studyQueryDSL.enums.UserRole;
 import com.jijisuaring.studyQueryDSL.error.ErrorCode;
 import com.jijisuaring.studyQueryDSL.error.exeption.NotFoundException;
 import com.jijisuaring.studyQueryDSL.error.exeption.UnAuthorizedException;
