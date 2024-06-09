@@ -1,5 +1,6 @@
 package com.jijisuaring.studyQueryDSL.dto.request;
 
+
 import com.jijisuaring.studyQueryDSL.entity.UserEntity;
 import lombok.Builder;
 import lombok.Data;
@@ -23,5 +24,3 @@ public class RequestUserSignUpDto {
     }
 
 }
-
-
