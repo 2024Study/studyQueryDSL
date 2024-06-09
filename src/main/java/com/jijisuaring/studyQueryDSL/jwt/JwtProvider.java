@@ -1,6 +1,6 @@
 package com.jijisuaring.studyQueryDSL.jwt;
 
-import com.jijisuaring.studyQueryDSL.entity.enums.UserRole;
+import com.jijisuaring.studyQueryDSL.enums.UserRole;
 import com.jijisuaring.studyQueryDSL.error.ErrorCode;
 import com.jijisuaring.studyQueryDSL.error.exeption.ForbiddenException;
 import com.jijisuaring.studyQueryDSL.repository.UserRepository;

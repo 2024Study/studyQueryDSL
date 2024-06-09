@@ -2,7 +2,10 @@ package com.jijisuaring.studyQueryDSL.jwt;
 
 import com.jijisuaring.studyQueryDSL.error.ErrorJwtCode;
 import com.jijisuaring.studyQueryDSL.service.jwt.RedisService;
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,6 +26,7 @@ public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {
 
     private final JwtProvider jwtProvider;
     private final RedisService redisService;
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,

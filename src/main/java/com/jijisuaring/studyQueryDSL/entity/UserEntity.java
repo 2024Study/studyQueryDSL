@@ -1,15 +1,14 @@
 package com.jijisuaring.studyQueryDSL.entity;
 
-import com.jijisuaring.studyQueryDSL.entity.enums.UserRank;
-import com.jijisuaring.studyQueryDSL.entity.enums.UserRole;
+import com.jijisuaring.studyQueryDSL.enums.UserRank;
+import com.jijisuaring.studyQueryDSL.enums.UserRole;
 import jakarta.persistence.*;
-import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,7 +19,16 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private Long id;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<PostEntity> posts;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<CommentEntity> comments;
+
+    @OneToMany(mappedBy = "userEntity")
+    private List<LikeEntity> likes;
 
     @Column(nullable = false)
     private String email;
@@ -43,9 +51,8 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private UserRank userRank;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_id")
-    private PostEntity posts;
+
+
 
 }
 

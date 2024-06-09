@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-
+import java.util.List;
 @Entity
 @Builder
 @Getter
@@ -18,43 +18,65 @@ public class PostEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+    //사용자 엔티티 매핑
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private UserEntity userEntity;
 
-    @Column(nullable = false)
-    private String author;
+    //댓글엔티티 매핑
+    @OneToMany(mappedBy = "postEntity")
+    private List<CommentEntity> comments;
 
-    @Column(nullable = false)
+
+    //좋아요엔티티 매핑
+    @OneToMany(mappedBy = "postEntity")
+    private List<LikeEntity> like;
+
+    @Column(columnDefinition = "integer default 0", nullable = false)
+    private int likes;
+
+    @Column(columnDefinition = "integer default 0", nullable = false) // 기본 조회수는 0
+    private int views;
+
+
+//    @ElementCollection(targetClass = TagName.class)
+//    @Enumerated(EnumType.STRING)
+//    @CollectionTable(name = "post_tags", joinColumns = @JoinColumn(name = "post_id"))
+//    @Column(name = "tag")
+//    private List<TagName> tags = new ArrayList<>();
+
+//    @ManyToOne
+//    @JoinColumn(name = "category_id", nullable = false)
+//    private CategoryEntity category;
+
+    @Column(nullable = false, unique = false)
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = false)
     private String content;
 
-    @Column(nullable = false)
-    private int view;
+    @Column
+    private Boolean isDel;
 
-    @Column(nullable = false)
-    private int like;
-
-    @Column(nullable = false)
-    private int tag;
-
-    @Column(nullable = false)
+    @Column
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
+
+    @Column
     private LocalDateTime updatedAt;
 
-    //카테고리 enum
+    public int increaseLikesNums() {
+        return this.likes += 1;
+    }
 
-    //사용자 매핑
+    public int decreaseLikesNums() {
+        return this.likes -= 1;
+    }
 
-    //댓글 매핑
-
-    //좋아요 매핑
-
-    //태그 매핑
-
-
+    public int increaseViews() {
+        return this.views += 1;
+    }
 
 
 

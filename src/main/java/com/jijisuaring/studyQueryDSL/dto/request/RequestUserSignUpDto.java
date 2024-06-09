@@ -4,8 +4,6 @@ import com.jijisuaring.studyQueryDSL.entity.UserEntity;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.UUID;
-
 @Data
 @Builder
 public class RequestUserSignUpDto {
@@ -16,14 +14,14 @@ public class RequestUserSignUpDto {
 
     public UserEntity toEntity() {
         return UserEntity.builder()
-                .id(UUID.randomUUID())
+//                .id(toEntity().getId())
                 .email(userEmail)
                 .password(userPw)
                 .name(userName)
                 .deleted(false)
                 .build();
-
     }
 
-
 }
+
+
