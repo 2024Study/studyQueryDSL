@@ -1,4 +1,4 @@
-package com.jijisuaring.studyQueryDSL;
+package com.jijisuaring.studyQueryDSL.config;
 
 import com.jijisuaring.studyQueryDSL.jwt.JwtAuthorizationTokenFilter;
 import com.jijisuaring.studyQueryDSL.jwt.JwtProvider;

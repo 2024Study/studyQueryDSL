@@ -8,7 +8,7 @@ import com.jijisuaring.studyQueryDSL.error.ErrorCode;
 import com.jijisuaring.studyQueryDSL.error.exeption.NotFoundException;
 import com.jijisuaring.studyQueryDSL.error.exeption.UnAuthorizedException;
 import com.jijisuaring.studyQueryDSL.jwt.JwtProvider;
-import com.jijisuaring.studyQueryDSL.repository.UserRepository;
+import com.jijisuaring.studyQueryDSL.repository.User.UserRepository;
 import com.jijisuaring.studyQueryDSL.service.Interface.UserService;
 import com.jijisuaring.studyQueryDSL.service.jwt.RedisService;
 import jakarta.servlet.http.HttpServletResponse;

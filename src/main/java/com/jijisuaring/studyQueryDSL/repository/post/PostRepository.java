@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @Repository
-public interface PostRepository extends JpaRepository<PostEntity, Long> {
+public interface PostRepository extends JpaRepository<PostEntity, Long>, PostRepositoryCustom{
 
     List<PostEntity> findTop5ByOrderByCreatedAtDesc();
     Page<PostEntity> findByIdIn(List<Long> ids, Pageable pageable);

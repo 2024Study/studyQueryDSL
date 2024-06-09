@@ -1,4 +1,4 @@
-package com.jijisuaring.studyQueryDSL.repository;
+package com.jijisuaring.studyQueryDSL.repository.User;
 
 import com.jijisuaring.studyQueryDSL.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
